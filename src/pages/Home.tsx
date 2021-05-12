@@ -56,7 +56,7 @@ const HomeWork: React.FC = () => {
                     Our Work
                 </h1>
             </div>
-            <div className = 'home--work-cards-container'>
+            <div className = 'home-work-cards-container'>
             {cases.map(customer => {
                 return (
                     <div className= 'home-work-card'>
@@ -64,7 +64,7 @@ const HomeWork: React.FC = () => {
                             <img src = {customer.thumbnail} alt = 'customer thumbnail'/>
                         </div>
                         <div className = 'home-work-card-txt'>
-                            <Link to = {`/work/${customer.url}`} >
+                            <Link to = {`/${customer.url}`} >
                                 <h3>
                                     {customer.title}
                                 </h3>
@@ -106,7 +106,7 @@ const HomeCTA: React.FC = () => {
 }
 
 
-function Home() {
+const  Home:React.FC = () => {
     return (
         <>
             <HeadBanner />

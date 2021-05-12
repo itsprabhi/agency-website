@@ -5,10 +5,10 @@ import Team from '../data/Team'
 const Teams:React.FC= () => {
 
     const team = Team
-    
+
     return (
         <div className = 'teams'>
-            <div className = 'teams-txt'>
+            <div className = 'teams-txt page-txt'>
                 <h1>
                     Our Team
                 </h1>

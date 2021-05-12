@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom'
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Teams from './pages/Teams';
@@ -15,6 +16,7 @@ function App() {
           <Route path = '/work' component = {Work} />
           <Route path = '/team' component = {Teams} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

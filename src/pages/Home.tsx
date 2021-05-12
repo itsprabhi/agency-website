@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ButtonGroups from '../components/ButtonGroups'
 import HeadBanner from '../components/HeadBanner'
 
-
+import CaseStudies from '../data/CaseStudies'
 
 const HomeAbout: React.FC = () => {
     return (
@@ -43,6 +44,46 @@ const HomeAbout: React.FC = () => {
     )
 }
 
+
+const HomeWork: React.FC = () => {
+
+    const cases = CaseStudies
+
+    return (
+        <div className = 'home-work'>
+            <div className = 'home-work-txt'>
+                <h1>
+                    Our Work
+                </h1>
+            </div>
+            <div className = 'home--work-cards-container'>
+            {cases.map(customer => {
+                return (
+                    <div className= 'home-work-card'>
+                        <div className = 'home-work-card-img'>
+                            <img src = {customer.thumbnail} alt = 'customer thumbnail'/>
+                        </div>
+                        <div className = 'home-work-card-txt'>
+                            <Link to = {`/work/${customer.url}`} >
+                                <h3>
+                                    {customer.title}
+                                </h3>
+                                <h6>
+                                    Services
+                                </h6>
+                                <p>
+                                    {customer.services}
+                                </p>
+                            </Link>
+                        </div>
+                    </div>
+                )
+            })}
+            </div>
+        </div>
+    )
+}
+
 const HomeCTA: React.FC = () => {
 
     const links = [
@@ -70,6 +111,7 @@ function Home() {
         <>
             <HeadBanner />
             <HomeAbout />
+            <HomeWork />
             <HomeCTA />
         </>
     )

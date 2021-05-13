@@ -19,9 +19,11 @@ const TestimonialCard: React.FC<Props> = ({ users }) => {
                             <img src = {user.img} alt = 'previous customer' />
                         </div>
                         <div className = 'testimonial-user-txt'>
-                            <h4>{user.name}</h4>
-                            <h6>{user.credential}</h6>
-                            <p>{user.quote}</p>
+                            <div>
+                                <h4>{user.name}</h4>
+                                <h6>{user.credential}</h6>
+                                <p>"{user.quote}"</p>
+                            </div>
                         </div>
                     </div>
                 )

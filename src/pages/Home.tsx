@@ -8,38 +8,40 @@ import CaseStudies from '../data/CaseStudies'
 const HomeAbout: React.FC = () => {
     return (
         <div className = 'home-about'>
+           <div className = 'container'>
             <div className = 'home-about-vid'></div>
-            <div className = 'home-about-txt'>
-                <h1>About Us</h1>
-                <p>
-                    Prodigy creatives is a branding and web design agency based in Barrie, Ontario. We create experiences that people love by aligning business goals with creativity.
-                </p>
-                <h4>
-                    Here is what we do
-                </h4>
-                <div className = 'service-lists'>
-                    <div className = 'service-list'>
-                        <h5>
-                            Design
-                        </h5>
-                        <ul>
-                            <li>Web design</li>
-                            <li>Copywriting</li>
-                            <li>Content Creation</li>
-                        </ul>
-                    </div>
-                    <div className = 'service-list'>
-                        <h5>
-                            Strategy
-                        </h5>
-                        <ul>
-                            <li>Market strategy</li>
-                            <li>SEO</li>
-                            <li>Brand Development</li>
-                        </ul>
+                <div className = 'home-about-txt'>
+                    <h1>About <br />Us</h1>
+                    <p>
+                        Prodigy creatives is a branding and web design agency based in Barrie, Ontario. We create experiences that people love by aligning business goals with creativity.
+                    </p>
+                    <h4>
+                        Here is what we do
+                    </h4>
+                    <div className = 'service-lists'>
+                        <div className = 'service-list'>
+                            <h5>
+                                Design
+                            </h5>
+                            <ul>
+                                <li>Web design</li>
+                                <li>Copywriting</li>
+                                <li>Content Creation</li>
+                            </ul>
+                        </div>
+                        <div className = 'service-list'>
+                            <h5>
+                                Strategy
+                            </h5>
+                            <ul>
+                                <li>Market strategy</li>
+                                <li>SEO</li>
+                                <li>Brand Development</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+           </div>
         </div>
     )
 }
@@ -50,7 +52,7 @@ const HomeWork: React.FC = () => {
     const cases = CaseStudies
 
     return (
-        <div className = 'home-work'>
+        <div className = 'home-work container'>
             <div className = 'home-work-txt'>
                 <h1>
                     Our Work
@@ -91,7 +93,7 @@ const HomeCTA: React.FC = () => {
     ]
 
     return (
-        <div className = 'home-cta'>
+        <div className = 'home-cta container'>
             <div className = 'home-cta-txt'>
                 <h2>
                     Get a free consultation!

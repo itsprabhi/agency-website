@@ -2,6 +2,13 @@ import React from 'react'
 import ButtonGroups from './ButtonGroups'
 import TestimonialCard from './TestimonialCard'
 
+
+import vid from '../imgs/vid/banner.mp4'
+import pic1 from '../imgs/jim.jpg'
+import pic2 from '../imgs/pam.jpg'
+
+
+
 function HeadBanner() {
 
     const links: Array<{text:string,link:string,exact?:boolean}> = [
@@ -15,32 +22,36 @@ function HeadBanner() {
         credential: string,
         quote: string
     }> = [
-        {name:'Jane Doe', img:'',credential:'CEO', quote:'Prodigy creatives gave my brand exactly what it needed'},
-        {name:'Jane Doe', img:'',credential:'CEO', quote:'Prodigy creatives gave my brand exactly what it needed'}
+        {name:'Jane Doe', img: pic1 ,credential:'CEO', quote:'Prodigy creatives gave my brand exactly what it needed'},
+        {name:'Jane Doe', img: pic2 ,credential:'CEO', quote:'Prodigy creatives gave my brand exactly what it needed'}
     ]
 
     return (
         <header className = 'header-banner'>
-            <div className = 'header-banner-heading'>
+            <video muted loop id="banner-vid">
+                <source src = {vid} type="video/mp4" />
+            </video>
+            <div id = 'banner-gradient'></div>
+            <div className = 'header-banner-heading container'>
                 <div>
                     <h1>
                         Creating stunning Brand and Web Experiences
                     </h1>
                 </div>
             </div>
-            <div className = 'header-banner-txt'>
+            <div className = 'header-banner-txt container'>
                 <div>
                     <div>
                         <p>
                             A creative agency that will help you to make your brand experience stunning so people won't forget.
                         </p>
                     </div>
-                        <ButtonGroups links = {links} />
-                    </div>
+                    <ButtonGroups links = {links} />
                 </div>
                 <div>
                     <TestimonialCard users = {users} />
                 </div>
+            </div>
         </header>
     )
 }

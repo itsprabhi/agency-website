@@ -1,0 +1,250 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+// colors
+$primary_color:#042A2B;
+$secondary_color:#EF7B45;
+$secondary_btn:#D84727;
+$light_text_color:#CDEDF6;
+$dark_text-color:#042A2B;
+
+@mixin global_width{
+    width:90%;
+    margin:auto;
+}
+
+body,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+h1{
+    font-size:4rem;
+}
+
+.container{
+    @include global_width();
+}
+
+
+// navbar
+
+nav{
+    width:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10;
+
+    .nav{
+        display: flex;
+        color: $light_text_color;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .brand{
+        padding: 20px 0px;
+        span{
+            color: $secondary_color;
+        }
+    }
+
+    .nav-list{
+
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: $secondary_color;
+        transform: translateY(-100vh);
+
+        ul{
+            list-style: none;
+        }
+        li{
+            margin: 5px 0px 5px 15px;
+
+            a{
+                color:$dark_text_color;
+                text-decoration: none;
+                padding: 10px 15px;
+                font-size: 4rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.toggle{
+    width:40px;
+    height: 6px;
+    background: $light_text-color;
+    position: relative;
+}
+
+.toggle::after{
+    
+    width:40px;
+    height: 6px;
+    background: $light_text-color;
+    position: absolute;
+    top:50px;
+    
+}
+
+// banner header
+
+.header-banner{
+
+    background: $primary_color;
+    position: relative;
+    color:$light_text_color;
+
+    #banner-vid, #banner-gradient{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    #banner-gradient{
+        background-image: linear-gradient( #042a2b9d, $primary_color);
+        height: 100vh;
+        z-index: 2;
+    }
+}
+
+.header-banner-heading{
+    height: 100vh;
+    display:flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 5;
+    h1{
+        font-size: 6rem;
+        width:80%;
+        margin: 30px 0px;
+    }
+}
+
+.header-banner-txt{
+    padding: 80px 0px 40px 0px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    p{
+        font-size: 1.6rem;
+    }
+    >div{
+        width: 45%;
+    }
+}
+
+// testimonial
+
+.testimonial-user-card{
+
+    width:70%;
+    display: flex;
+    justify-content: space-around;
+    background: $light_text_color;
+    color:$dark_text-color;
+    padding: 10px 15px;
+    margin: 20px auto 40px auto;
+    border-radius: 5px;
+
+
+    .testimonial-user-img{
+        img{
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0px 5px 5px 5px;
+        }
+    }
+
+    .testimonial-user-txt{
+        p{
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+    }
+
+}
+
+
+// buttons
+
+.btn-group{
+
+    .btn{
+        margin: 40px auto;
+        display: flex;
+        text-align: center;
+        a{
+            padding: 10px 20px;
+            color: $light_text-color;
+            text-decoration: none;
+            background: $secondary_btn;
+            width: 90%;
+        }
+    }
+
+    
+    :nth-child(even) {
+        a{
+            background: $secondary_color;
+        }
+    }
+}
+
+// HOME-ABOUT
+
+.home-about{
+    background: $secondary_color;
+    height: 100vh;
+    max-height: auto;
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        >div{
+            width: 45%;
+        }
+
+        .home-about-txt{
+            >*{
+                width:70%;
+            }
+            h1{
+                color: rgba(255, 255, 255, 0.795);
+                opacity: 0.1;
+                font-size: 7rem;
+                line-height: 7rem;
+                text-align: right;
+                width: 50%;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            p{
+                font-size: 2rem;
+            }
+            h4{
+                margin: 20px 0px;
+            }
+            .service-lists{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

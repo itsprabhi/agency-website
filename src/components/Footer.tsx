@@ -2,8 +2,10 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function Footer() {
+
     return (
         <footer>
+            <div className="container">
             <div className = 'footer-contact'>
                 <h1>
                     Get in <span>touch</span>
@@ -36,7 +38,7 @@ function Footer() {
             </div>
             <div className = 'footer-menu'>
                 <h3>
-                    <Link to = '/contact'>Tell Us About the Project</Link>
+                    <Link to = '/contact'>Tell Us About the <span>Project</span></Link>
                 </h3>
                     <div className = 'nav-list'>
                     <ul>
@@ -57,6 +59,10 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
+            </div>
+            </div>
+            <div className="copyrights">
+                Prodigy Creatives@{new Date().getFullYear()}. All rights reserved.
             </div>
         </footer>
     )

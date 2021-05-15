@@ -4,13 +4,25 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 h1 {
   font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.4rem;
 }
 
 .container {
   width: 90%;
   margin: auto;
+}
+
+.page-heading {
+  text-align: center;
 }
 
 nav {
@@ -25,7 +37,7 @@ nav .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #CDEDF6;
+  color: #ffffff;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -62,7 +74,7 @@ nav .nav-list li {
 }
 
 nav .nav-list li a {
-  color: #042A2B;
+  color: #000000;
   text-decoration: none;
   padding: 10px 15px;
   font-size: 4rem;
@@ -72,14 +84,14 @@ nav .nav-list li a {
 .toggle {
   width: 40px;
   height: 6px;
-  background: #CDEDF6;
+  background: #ffffff;
   position: relative;
 }
 
 .toggle::after {
   width: 40px;
   height: 6px;
-  background: #CDEDF6;
+  background: #ffffff;
   position: absolute;
   top: 50px;
 }
@@ -87,7 +99,7 @@ nav .nav-list li a {
 .header-banner {
   background: #042A2B;
   position: relative;
-  color: #CDEDF6;
+  color: #ffffff;
 }
 
 .header-banner #banner-vid, .header-banner #banner-gradient {
@@ -108,7 +120,7 @@ nav .nav-list li a {
 }
 
 .header-banner-heading {
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,7 +132,7 @@ nav .nav-list li a {
 }
 
 .header-banner-heading h1 {
-  font-size: 6rem;
+  font-size: 8vw;
   width: 80%;
   margin: 30px 0px;
 }
@@ -153,8 +165,8 @@ nav .nav-list li a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: #CDEDF6;
-  color: #042A2B;
+  background: #ffffff;
+  color: #000000;
   padding: 10px 15px;
   margin: 20px auto 40px auto;
   border-radius: 5px;
@@ -184,7 +196,7 @@ nav .nav-list li a {
 
 .btn-group .btn a {
   padding: 10px 20px;
-  color: #CDEDF6;
+  color: #ffffff;
   text-decoration: none;
   background: #D84727;
   width: 90%;
@@ -194,10 +206,41 @@ nav .nav-list li a {
   background: #EF7B45;
 }
 
+@media (max-width: 900px) {
+  .header-banner-heading h1 {
+    font-size: 4rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-banner-txt {
+    display: block;
+  }
+  .header-banner-txt > div {
+    width: 100%;
+  }
+  .testimonial-user-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .testimonial-user-container > div {
+    margin: 10px;
+  }
+}
+
 .home-about {
   background: #EF7B45;
-  height: 100vh;
-  max-height: auto;
+  min-height: 100vh;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
 }
 
 .home-about .container {
@@ -216,10 +259,6 @@ nav .nav-list li a {
 
 .home-about .container > div {
   width: 45%;
-}
-
-.home-about .container .home-about-txt > * {
-  width: 70%;
 }
 
 .home-about .container .home-about-txt h1 {
@@ -246,8 +285,183 @@ nav .nav-list li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media (max-width: 800px) {
+  .home-about .container {
+    display: block;
+  }
+  .home-about .container > div {
+    width: 100%;
+  }
+  .home-about .home-about-txt h1 {
+    display: none;
+  }
+}
+
+.home-work {
+  background: #EF7B45;
+  padding: 0px 0px 40px 0px;
+}
+
+.home-work-cards-container :nth-child(even) .home-work-card-img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.home-work-cards-container :nth-child(even) .home-work-card-txt > div {
+  right: -20%;
+  left: auto;
+}
+
+.home-work-cards-container a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.home-work-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 100px auto;
+}
+
+.home-work-card .home-work-card-img {
+  width: 60%;
+  position: relative;
+}
+
+.home-work-card .home-work-card-img .home-work-filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #ef7b4570;
+}
+
+.home-work-card .home-work-card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home-work-card .home-work-card-txt {
+  width: 40%;
+  position: relative;
+}
+
+.home-work-card .home-work-card-txt > div {
+  position: absolute;
+  left: -20%;
+  bottom: -15%;
+  z-index: 3;
+}
+
+@media (max-width: 800px) {
+  .home-work-card {
+    display: block;
+  }
+  .home-work-card .home-work-card-img, .home-work-card .home-work-card-txt {
+    width: 100%;
+  }
+  .home-work-card .home-work-card-txt > div {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+  .home-work-cards-container :nth-child(even) .home-work-card-txt > div {
+    right: auto;
+    left: auto;
+    position: relative;
+  }
+}
+
+.home-cta {
+  background: #042A2B;
+  color: #ffffff;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+.home-cta h1 span {
+  color: #EF7B45;
+}
+
+.home-cta p {
+  font-size: 1.6rem;
+  margin: 20px auto;
+  width: 80%;
+}
+
+@media (max-width: 800px) {
+  .home-cta p {
+    width: 100%;
+  }
+}
+
+footer {
+  background: #042A2B;
+  color: #ffffff;
+  padding: 40px 0px;
+}
+
+footer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+footer > div > div {
+  width: 40%;
+}
+
+footer > div h1 span {
+  color: #EF7B45;
+}
+
+footer > div p {
+  font-size: 1.6rem;
+  margin: 10px auto;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a span {
+  color: #EF7B45;
+}
+
+footer .footer-menu .nav-list li {
+  margin: 10px 20px 10px 0px;
+  font-size: 1.2rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 10px 20px 10px 0px;
+}
+
+.copyrights {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto;
 }
 /*# sourceMappingURL=global.css.map */

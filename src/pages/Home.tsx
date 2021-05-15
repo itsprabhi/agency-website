@@ -52,33 +52,37 @@ const HomeWork: React.FC = () => {
     const cases = CaseStudies
 
     return (
-        <div className = 'home-work container'>
-            <div className = 'home-work-txt'>
+        <div className = 'home-work'>
+            <div className = 'home-work-txt container page-heading'>
                 <h1>
                     Our Work
                 </h1>
             </div>
-            <div className = 'home-work-cards-container'>
+            <div className = 'home-work-cards-container container'>
             {cases.map(customer => {
                 return (
+                    <Link to = {`/${customer.url}`}>
                     <div className= 'home-work-card'>
                         <div className = 'home-work-card-img'>
+                            <div className = 'home-work-filter'></div>
                             <img src = {customer.thumbnail} alt = 'customer thumbnail'/>
                         </div>
                         <div className = 'home-work-card-txt'>
-                            <Link to = {`/${customer.url}`} >
-                                <h3>
-                                    {customer.title}
-                                </h3>
-                                <h6>
-                                    Services
-                                </h6>
-                                <p>
-                                    {customer.services}
-                                </p>
-                            </Link>
+                            <div>
+                                
+                                    <h3>
+                                        {customer.title}
+                                    </h3>
+                                    <h6>
+                                        Services
+                                    </h6>
+                                    <p>
+                                        {customer.services}
+                                    </p>
+                            </div>
                         </div>
                     </div>
+                    </Link>
                 )
             })}
             </div>
@@ -93,11 +97,11 @@ const HomeCTA: React.FC = () => {
     ]
 
     return (
-        <div className = 'home-cta container'>
-            <div className = 'home-cta-txt'>
-                <h2>
-                    Get a free consultation!
-                </h2>
+        <div className = 'home-cta'>
+            <div className = 'home-cta-txt container'>
+                <h1 className = 'page-heading'>
+                    Get a <span>free</span> consultation!
+                </h1>
                 <p>
                     Book a free 30 minutes consultation with our remarkable team. Discuss your brand problems and get the best solutions. You will receive many insights to fix and improve your brand strategy. Why wait!
                 </p>

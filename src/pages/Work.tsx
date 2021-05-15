@@ -8,32 +8,34 @@ const Work: React.FC = () => {
 
     return (
         <div className = ''>
-            <div className = 'work-txt page-txt'>
+            <div className = 'work-txt page-txt page-heading'>
                 <h1>
                     Our <span>Work</span>
                 </h1>
             </div>
-            <div className = 'work-cards-container'>
+            <div className = 'work-cards-container container'>
             {cases.map(customer => {
                 return (
+                    <Link to = {`/${customer.url}`} >
                     <div className= 'work-card'>
                         <div className = 'work-card-img'>
                             <img src = {customer.thumbnail} alt = 'customer thumbnail'/>
                         </div>
                         <div className = 'work-card-txt'>
-                            <Link to = {`/${customer.url}`} >
-                                <h3>
-                                    {customer.title}
-                                </h3>
-                                <h6>
-                                    Services
-                                </h6>
-                                <p>
-                                    {customer.services}
-                                </p>
-                            </Link>
+                            <div>
+                                    <h3>
+                                        {customer.title}
+                                    </h3>
+                                    <h6>
+                                        Services
+                                    </h6>
+                                    <p>
+                                        {customer.services}
+                                    </p>
+                            </div>
                         </div>
                     </div>
+                    </Link>
                 )
             })}
             </div>

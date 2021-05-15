@@ -19,18 +19,18 @@ function Footer() {
                 <div className = 'footer-social'>
                     <ul>
                         <li>
-                            <a target = '_blank' href = '#'>
-                                <img src="https://img.icons8.com/fluent/48/000000/twitter.png"/>
+                            <a target = '_blank' href = '/#'>
+                                <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt ='' />
                             </a>
                         </li>
                         <li>
-                            <a target = '_blank' href = '#'>
-                                <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/>
+                            <a target = '_blank' href = '/#'>
+                                <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt =''/>
                             </a>
                         </li>
                         <li>
-                            <a target = '_blank' href = '#'>
-                                <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/>
+                            <a target = '_blank' href = '/#'>
+                                <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt =''/>
                             </a>
                         </li>
                     </ul>

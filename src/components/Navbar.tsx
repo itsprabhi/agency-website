@@ -1,9 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState,useEffect} from 'react'
+import { Link,useLocation } from 'react-router-dom'
 
 function Navbar() {
+
+
+    const [homePageCheck, SethomePagecheck] = useState('nav-absolute')
+
+    const location = useLocation()
+
+
+    useEffect(() => {
+        if(location.pathname === '/'){
+            SethomePagecheck('nav-absolute')
+        }else{
+            SethomePagecheck('')
+        }
+    },[location])
+
     return (
-        <nav>
+        <nav className = {homePageCheck}>
             <div className = 'nav container'>
                 <div className = 'brand'>
                     Prodigy<span> Creatives </span>

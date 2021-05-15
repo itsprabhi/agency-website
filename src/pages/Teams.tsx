@@ -1,4 +1,5 @@
 import React from 'react'
+import ButtonGroups from '../components/ButtonGroups'
 import Team from '../data/Team'
 
 
@@ -6,14 +7,18 @@ const Teams:React.FC= () => {
 
     const team = Team
 
+    const links: Array<{text:string,link:string,exact?:boolean}> = [
+        {text: `Book a free consultation in just 5 minutes`, link: `/contact`}
+    ]
+
     return (
         <div className = 'teams'>
-            <div className = 'teams-txt page-txt'>
+            <div className = 'teams-txt page-heading'>
                 <h1>
                     Our Team
                 </h1>
             </div>
-            <div className = 'teams-cards'>
+            <div className = 'teams-cards container'>
                 {team.map(member => {
                     return (
                         <div className = 'team-card'>
@@ -32,6 +37,9 @@ const Teams:React.FC= () => {
                     )
                 })}
             </div>
+           <div className="team-cta">
+           <ButtonGroups links = {links} />
+           </div>
         </div>
     )
 }

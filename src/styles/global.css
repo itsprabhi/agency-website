@@ -25,9 +25,17 @@ h3 {
   text-align: center;
 }
 
+.nav-absolute {
+  position: absolute;
+}
+
+.nav-absolute .nav {
+  color: #ffffff;
+}
+
 nav {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 10;
@@ -37,7 +45,7 @@ nav .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #ffffff;
+  color: #000000;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -48,6 +56,7 @@ nav .nav {
 
 nav .brand {
   padding: 20px 0px;
+  font-weight: bold;
 }
 
 nav .brand span {
@@ -340,7 +349,7 @@ nav .nav-list li a {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: #ef7b4570;
+  background: #ef7b4544;
 }
 
 .home-work-card .home-work-card-img img {
@@ -463,5 +472,108 @@ footer ul li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 20px auto;
+}
+
+.work-cards-container a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.work-card {
+  margin: 50px auto;
+}
+
+.work-card .work-card-img {
+  width: 100%;
+  position: relative;
+  height: 60vh;
+}
+
+.work-card .work-card-img .home-work-filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #ef7b4570;
+}
+
+.work-card .work-card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.work-card .work-card-txt {
+  width: 40%;
+  position: relative;
+}
+
+.work-card .work-card-txt > div {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 800px) {
+  .work-card {
+    display: block;
+  }
+  .work-card .work-card-img, .work-card .work-card-txt {
+    width: 100%;
+  }
+  .work-card .work-card-txt > div {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+  .work-cards-container :nth-child(even) .home-work-card-txt > div {
+    right: auto;
+    left: auto;
+    position: relative;
+  }
+}
+
+.teams-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  margin: 50px auto;
+}
+
+.team-card {
+  margin: 10px;
+}
+
+.team-card .team-card-photo {
+  height: 60vh;
+}
+
+.team-card .team-card-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.team-card .team-card-txt {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.team-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team-cta > div {
+  width: 80%;
 }
 /*# sourceMappingURL=global.css.map */

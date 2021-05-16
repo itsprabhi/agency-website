@@ -1,13 +1,13 @@
 import pic1 from '../imgs/customer1.jpg'
 import pic2 from '../imgs/customer2.png'
 
-const CaseStudies:Array<{
+const CaseStudies:{
     thumbnail: string,
     title: string,
     services: string,
     text: string,
     url:string
-}>  = [
+}[]  = [
     {
         thumbnail: pic1,
         title: 'Fire Barbeque',

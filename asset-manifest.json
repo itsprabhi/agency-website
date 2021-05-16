@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/agency-website/static/css/main.9f6d7a0c.chunk.css",
+    "main.js": "/agency-website/static/js/main.105925bb.chunk.js",
+    "main.js.map": "/agency-website/static/js/main.105925bb.chunk.js.map",
+    "runtime-main.js": "/agency-website/static/js/runtime-main.880943a2.js",
+    "runtime-main.js.map": "/agency-website/static/js/runtime-main.880943a2.js.map",
+    "static/js/2.29a020c4.chunk.js": "/agency-website/static/js/2.29a020c4.chunk.js",
+    "static/js/2.29a020c4.chunk.js.map": "/agency-website/static/js/2.29a020c4.chunk.js.map",
+    "static/js/3.9e848e9a.chunk.js": "/agency-website/static/js/3.9e848e9a.chunk.js",
+    "static/js/3.9e848e9a.chunk.js.map": "/agency-website/static/js/3.9e848e9a.chunk.js.map",
+    "index.html": "/agency-website/index.html",
+    "static/css/main.9f6d7a0c.chunk.css.map": "/agency-website/static/css/main.9f6d7a0c.chunk.css.map",
+    "static/js/2.29a020c4.chunk.js.LICENSE.txt": "/agency-website/static/js/2.29a020c4.chunk.js.LICENSE.txt",
+    "static/media/banner.14b27a85.mp4": "/agency-website/static/media/banner.14b27a85.mp4",
+    "static/media/customer1.e2c2ec7a.jpg": "/agency-website/static/media/customer1.e2c2ec7a.jpg",
+    "static/media/customer2.08fed6e0.png": "/agency-website/static/media/customer2.08fed6e0.png",
+    "static/media/harvey.504a1abc.jpg": "/agency-website/static/media/harvey.504a1abc.jpg",
+    "static/media/jane.3abbeccf.jpg": "/agency-website/static/media/jane.3abbeccf.jpg",
+    "static/media/jessica.17212ceb.jpg": "/agency-website/static/media/jessica.17212ceb.jpg",
+    "static/media/jim.89a17e7c.jpg": "/agency-website/static/media/jim.89a17e7c.jpg",
+    "static/media/mike.abba0030.jpg": "/agency-website/static/media/mike.abba0030.jpg",
+    "static/media/pam.23c7ea3d.jpg": "/agency-website/static/media/pam.23c7ea3d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.880943a2.js",
+    "static/js/2.29a020c4.chunk.js",
+    "static/css/main.9f6d7a0c.chunk.css",
+    "static/js/main.105925bb.chunk.js"
+  ]
+}

@@ -547,9 +547,21 @@ footer{
 
 .copyrights{
     justify-content: center;
-    margin: 20px auto;
+    margin: 50px auto;
+    text-align: center;
 }
 
+
+@media (max-width:800px){
+    footer{
+        >div{
+            display: block;
+            >div{
+                width: 100%;
+            }
+        }
+    }
+}
 
 // WORK PAGE
 
@@ -666,5 +678,73 @@ footer{
     justify-content: center;
     >div{
         width:80%
+    }
+}
+
+@media (max-width:800px){
+    .teams-cards{
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width:500px){
+    .teams-cards{
+        grid-template-columns: auto;
+    }
+}
+
+
+// accordian
+
+.accordian{
+    background: $secondary_color;
+    padding: 40px 0px;
+}
+
+.faq-card{
+    width: 70%;
+    margin: 10px auto;
+    text-align: center;
+    border-top: thin solid $secondary_btn;
+    // border-bottom: thin solid $secondary_btn;
+
+    .faq-ques{
+        padding:10px 0px;
+        cursor: pointer;
+    }
+
+    .faq-ans{
+        // background: #ee8352;
+        text-align: left;
+    }
+
+    .false{
+        transition: 0.6s ease;
+        height: 0;
+        overflow: hidden;
+        // transform: translateY(-50px);
+        opacity: 0;
+    }
+    .true{
+        transition: 0.6s ease;
+        opacity: 1;
+        // transform: translateY(0px);
+        height: auto ;
+        padding: 10px;
+        overflow: auto;
+    }
+}
+
+// PROJECT
+
+.project{
+    *{
+        margin: 20px auto;
+    }
+
+    .project-img{
+        img{
+            width:100%;
+            object-fit: cover;
+        }
     }
 }

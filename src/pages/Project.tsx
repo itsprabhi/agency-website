@@ -12,15 +12,15 @@ const Project: React.FC = () => {
     
 
     return (
-        <div className = 'project'>
-            <div className = 'project-txt'>
+        <div className = 'project container'>
+            <div className = 'project-img'>
+                <img src = {cases!.thumbnail} alt = 'logo of client'></img>
+            </div>
+            <div className = 'project-txt page-heading'>
                 <h1>
                     {cases!.title}
                 </h1>
                 <span>Services - </span>{cases!.services}
-            </div>
-            <div className = 'project-img'>
-                <img src = {cases!.thumbnail} alt = 'logo of client'></img>
             </div>
             <div className = 'project-content'>
                 <p>

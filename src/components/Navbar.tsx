@@ -4,45 +4,64 @@ import { Link,useLocation } from 'react-router-dom'
 function Navbar() {
 
 
-    const [homePageCheck, SethomePagecheck] = useState('nav-absolute')
+    const [navSettings, SetNavSettings] = useState({
+        navClass: 'nav-absolute',
+        switch: false
+    })
 
     const location = useLocation()
+
+    const navSwitch = () => {
+        SetNavSettings({
+            ...navSettings,
+            switch: !navSettings.switch
+        })
+        console.log(navSettings.switch)
+    }
 
 
     useEffect(() => {
         if(location.pathname === '/'){
-            SethomePagecheck('nav-absolute')
+            SetNavSettings({
+                ...navSettings,
+                navClass:'nav-absolute'
+            })
         }else{
-            SethomePagecheck('')
+            SetNavSettings({
+                ...navSettings,
+                navClass:''
+            })
         }
     },[location])
 
     return (
-        <nav className = {homePageCheck}>
+        <nav className = {navSettings.navClass}>
             <div className = 'nav container'>
                 <div className = 'brand'>
                     Prodigy<span> Creatives </span>
                 </div>
-                <div className = 'nav-list'>
+                <div className = {`nav-list ${navSettings.switch}`}>
                     <ul>
                         <li>
-                            <Link to = '/'>
+                            <Link onClick = {navSwitch} to = '/'>
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link to = '/work'>
+                            <Link onClick = {navSwitch} to = '/work'>
                                 Work
                             </Link>
                         </li>
                         <li>
-                            <Link to = '/team'>
+                            <Link onClick = {navSwitch} to = '/team'>
                                 Our Team
                             </Link>
                         </li>
                     </ul>
                 </div>
-                <div className = 'toggle'></div>
+                <div className = {`toggle`} onClick = {navSwitch}>
+                    <div className="toggle-btn"></div>
+                </div>
             </div>
         </nav>
     )

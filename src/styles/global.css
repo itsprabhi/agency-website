@@ -33,6 +33,18 @@ h3 {
   color: #ffffff;
 }
 
+.nav-absolute .toggle-btn:before {
+  background: #ffffff;
+}
+
+.nav-absolute .toggle-btn:after {
+  background: #ffffff;
+}
+
+.nav-absolute .toggle-btn {
+  background: #ffffff;
+}
+
 nav {
   width: 100%;
   position: relative;
@@ -70,8 +82,12 @@ nav .nav-list {
   width: 100vw;
   height: 100vh;
   background: #EF7B45;
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav .nav-list ul {
@@ -79,30 +95,72 @@ nav .nav-list ul {
 }
 
 nav .nav-list li {
-  margin: 5px 0px 5px 15px;
+  margin: 5px 0px 5px 10px;
 }
 
 nav .nav-list li a {
   color: #000000;
   text-decoration: none;
-  padding: 10px 15px;
-  font-size: 4rem;
+  padding: 10px 10px;
+  font-size: 4.8rem;
   font-weight: bold;
 }
 
+nav .false {
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  height: 0px;
+}
+
+nav .true {
+  -webkit-transform: translateY(0vh);
+          transform: translateY(0vh);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .nav .nav-list li a {
+    font-size: 3.4rem;
+  }
+}
+
 .toggle {
-  width: 40px;
-  height: 6px;
-  background: #ffffff;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+}
+
+.toggle-btn {
+  width: 50px;
+  height: 3px;
+  background: #000000;
   position: relative;
 }
 
-.toggle::after {
-  width: 40px;
-  height: 6px;
-  background: #ffffff;
+.toggle-btn:after {
+  content: '';
+  display: block;
   position: absolute;
-  top: 50px;
+  top: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #000000;
+}
+
+.toggle-btn:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #000000;
 }
 
 .header-banner {
@@ -217,7 +275,7 @@ nav .nav-list li a {
 
 @media (max-width: 900px) {
   .header-banner-heading h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     width: 100%;
   }
 }

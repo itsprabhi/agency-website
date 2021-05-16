@@ -45,6 +45,15 @@ h3{
     .nav{
         color: $light_text_color;
     }
+    .toggle-btn:before{
+        background: $light_text-color;
+    }
+    .toggle-btn:after{
+        background: $light_text-color;
+    }
+    .toggle-btn{
+        background: $light_text-color;
+    }
 }
 nav{
     width:100%;
@@ -76,41 +85,87 @@ nav{
         width: 100vw;
         height: 100vh;
         background: $secondary_color;
-        transform: translateY(-100vh);
+        display: flex;
+        align-items: center;
+        
 
         ul{
             list-style: none;
         }
         li{
-            margin: 5px 0px 5px 15px;
+            margin: 5px 0px 5px 10px;
 
             a{
                 color:$dark_text_color;
                 text-decoration: none;
-                padding: 10px 15px;
-                font-size: 4rem;
+                padding: 10px 10px;
+                font-size: 4.8rem;
                 font-weight: bold;
+            }
+        }
+    }
+    .false{
+        transform: translateY(-100vh);
+        transition: 0.4s;
+        height: 0px;
+    }
+
+    .true{
+        transform: translateY(0vh);   
+        transition: 0.4s ease-in-out; 
+         
+    }
+}
+
+@media (max-width:800px){
+    .nav{
+        .nav-list{
+            li{
+                a{
+                    font-size: 3.4rem;
+                }
             }
         }
     }
 }
 
+
 .toggle{
-    width:40px;
-    height: 6px;
-    background: $light_text-color;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+}
+
+.toggle-btn{
+    width:50px;
+    height: 3px;
+    background: $dark_text-color;
     position: relative;
 }
 
-.toggle::after{
-    
-    width:40px;
-    height: 6px;
-    background: $light_text-color;
+.toggle-btn:after{
+    content:'';
+    display: block;
     position: absolute;
-    top:50px;
-    
+    top:-10px;
+    left:0;
+    width:50px;
+    height: 3px;
+    background: $dark_text_color;
 }
+
+.toggle-btn:before{
+    content:'';
+    display: block;
+    position: absolute;
+    top:10px;
+    left:0;
+    width:50px;
+    height: 3px;
+    background: $dark_text_color;
+}
+
 
 // banner header
 
@@ -228,7 +283,7 @@ nav{
 @media (max-width:900px){
     .header-banner-heading{
         h1{
-            font-size: 4rem;
+            font-size: 3.8rem;
             width:100%;
         }
     }

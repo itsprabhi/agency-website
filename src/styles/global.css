@@ -4,6 +4,10 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 p {
   margin: 0;
 }
@@ -318,14 +322,14 @@ nav .true {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 }
 
 .home-about .container > div {
-  width: 45%;
+  width: 80%;
 }
 
 .home-about .container .home-about-txt h1 {
@@ -357,7 +361,39 @@ nav .true {
           justify-content: flex-start;
 }
 
+.home-about-vid {
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-about-vid .home-vid-filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(60%, rgba(221, 90, 50, 0.253)), color-stop(95%, #EF7B45));
+  background-image: linear-gradient(90deg, rgba(221, 90, 50, 0.253) 60%, #EF7B45 95%);
+  z-index: 2;
+}
+
+.home-about-vid .home-vid-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home-about-vid .home-vid-container video {
+  top: 0;
+}
+
 @media (max-width: 800px) {
+  .home-about .home-about-vid {
+    display: none;
+  }
   .home-about .container {
     display: block;
   }
@@ -372,6 +408,10 @@ nav .true {
 .home-work {
   background: #EF7B45;
   padding: 0px 0px 40px 0px;
+}
+
+.home-work .home-work-txt {
+  padding-top: 50px;
 }
 
 .home-work-cards-container :nth-child(even) .home-work-card-img {

@@ -1,21 +1,59 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { useInView } from "react-intersection-observer"
+import { useAnimation, motion } from "framer-motion"
+import { Parallax } from 'react-scroll-parallax';
+
+
 import Accordian from '../components/Accordian'
 import ButtonGroups from '../components/ButtonGroups'
 import HeadBanner from '../components/HeadBanner'
 
 import CaseStudies from '../data/CaseStudies'
+import aboutVid from '../imgs/vid/about.mp4'
 
 const HomeAbout: React.FC = () => {
+
+    const animation = useAnimation()
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: "-200px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+          animation.start("visible")
+        }
+      }, [animation, inView])
+
+    
     return (
         <div className = 'home-about'>
+            <div className = 'home-about-vid'>
+                <div className = 'home-vid-filter'></div>
+                <div className = 'home-vid-container'>
+                    <video muted loop id="banner-vid" autoPlay>
+                        <source src = {aboutVid} type="video/mp4" />
+                    </video>
+                </div>
+            </div>
            <div className = 'container'>
-            <div className = 'home-about-vid'></div>
                 <div className = 'home-about-txt'>
                     <h1>About <br />Us</h1>
-                    <p>
+                    <motion.p 
+                        ref={contentRef}
+                        animate={animation}
+                        initial="hidden"
+                        variants={{
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            transition: { duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] },
+                        },
+                        hidden: { opacity: 0, y: 72 },
+                    }}>
                         Prodigy creatives is a branding and web design agency based in Barrie, Ontario. We create experiences that people love by aligning business goals with creativity.
-                    </p>
+                    </motion.p>
                     <h4>
                         Here is what we do
                     </h4>
@@ -47,6 +85,10 @@ const HomeAbout: React.FC = () => {
     )
 }
 
+// const ParallaxImage = () => (
+    
+// );
+
 
 const HomeWork: React.FC = () => {
 
@@ -69,18 +111,21 @@ const HomeWork: React.FC = () => {
                             <img src = {customer.thumbnail} alt = 'customer thumbnail'/>
                         </div>
                         <div className = 'home-work-card-txt'>
+                        
                             <div>
-                                
-                                    <h3>
-                                        {customer.title}
-                                    </h3>
-                                    <h6>
-                                        Services
-                                    </h6>
-                                    <p>
-                                        {customer.services}
-                                    </p>
+                                <Parallax className="custom-class" y={[-50, -250]} tagOuter="figure">
+                                <h3>
+                                    {customer.title}
+                                </h3>
+                                <h6>
+                                    Services
+                                </h6>
+                                <p>
+                                    {customer.services}
+                                </p>
+                                </Parallax>
                             </div>
+                        
                         </div>
                     </div>
                     </Link>

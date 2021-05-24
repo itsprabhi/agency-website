@@ -9,12 +9,15 @@ import Project from './pages/Project';
 import Teams from './pages/Teams';
 import Work from './pages/Work';
 
+
 import '../src/styles/global.css'
+import Cursor from './components/Cursor';
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <Cursor />
         <Navbar />
         <Switch>
           <Route exact path = '/' component = {Home} />

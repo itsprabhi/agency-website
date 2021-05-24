@@ -4,6 +4,14 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+html {
+  cursor: none;
+}
+
+html * {
+  cursor: none;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -133,7 +141,6 @@ nav .true {
 
 .toggle {
   padding: 20px;
-  cursor: pointer;
   position: relative;
   z-index: 20;
 }
@@ -713,7 +720,6 @@ footer ul li {
 
 .faq-card .faq-ques {
   padding: 10px 0px;
-  cursor: pointer;
 }
 
 .faq-card .faq-ans {
@@ -745,5 +751,19 @@ footer ul li {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.app-cursor {
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  background: #EF7B45;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-transform: rotate3d(0, 0, 0);
+          transform: rotate3d(0, 0, 0);
+  position: fixed;
+  border-radius: 50%;
+  mix-blend-mode: difference;
 }
 /*# sourceMappingURL=global.css.map */

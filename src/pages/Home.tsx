@@ -113,7 +113,7 @@ const HomeWork: React.FC = () => {
                         <div className = 'home-work-card-txt'>
                         
                             <div>
-                                <Parallax className="custom-class" y={[-50, -250]} tagOuter="figure">
+                                <Parallax className="custom-class" y={[-50, -200]} tagOuter="figure">
                                 <h3>
                                     {customer.title}
                                 </h3>

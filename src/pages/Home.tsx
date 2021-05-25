@@ -17,14 +17,30 @@ const HomeAbout: React.FC = () => {
     const animation = useAnimation()
     const [contentRef, inView] = useInView({
         triggerOnce: true,
-        rootMargin: "-200px",
+        rootMargin: "-100px",
     })
+
 
     useEffect(() => {
         if (inView) {
           animation.start("visible")
         }
       }, [animation, inView])
+
+      const container = {
+        hidden: { opacity: 0 },
+        show: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.5
+          }
+        }
+      }
+
+      const item = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1 }
+      }
 
     
     return (
@@ -39,7 +55,7 @@ const HomeAbout: React.FC = () => {
             </div>
            <div className = 'container'>
                 <div className = 'home-about-txt'>
-                    <h1>About <br />Us</h1>
+                    {/* <h1>About <br />Us</h1> */}
                     <motion.p 
                         ref={contentRef}
                         animate={animation}
@@ -62,11 +78,15 @@ const HomeAbout: React.FC = () => {
                             <h5>
                                 Design
                             </h5>
-                            <ul>
-                                <li>Web design</li>
-                                <li>Copywriting</li>
-                                <li>Content Creation</li>
-                            </ul>
+                            <motion.ul 
+                                variants={container}
+                                initial="hidden"
+                                animate="show"
+                            >
+                                <motion.li variants={item} >Web design</motion.li>
+                                <motion.li variants={item} >Copywriting</motion.li>
+                                <motion.li variants={item} >Content Creation</motion.li>
+                            </motion.ul>
                         </div>
                         <div className = 'service-list'>
                             <h5>
@@ -113,7 +133,7 @@ const HomeWork: React.FC = () => {
                         <div className = 'home-work-card-txt'>
                         
                             <div>
-                                <Parallax className="custom-class" y={[-50, -200]} tagOuter="figure">
+                                <Parallax className="custom-class" y={[20, -200]} tagOuter="figure">
                                 <h3>
                                     {customer.title}
                                 </h3>

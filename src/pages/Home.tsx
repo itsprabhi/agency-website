@@ -17,7 +17,7 @@ const HomeAbout: React.FC = () => {
     const animation = useAnimation()
     const [contentRef, inView] = useInView({
         triggerOnce: true,
-        rootMargin: "-100px",
+        rootMargin: "-200px",
     })
 
 
@@ -54,10 +54,7 @@ const HomeAbout: React.FC = () => {
                 </div>
             </div>
            <div className = 'container'>
-                <div className = 'home-about-txt'>
-                    {/* <h1>About <br />Us</h1> */}
-                    <motion.p 
-                        ref={contentRef}
+                <motion.div className = 'home-about-txt' ref={contentRef}
                         animate={animation}
                         initial="hidden"
                         variants={{
@@ -68,8 +65,10 @@ const HomeAbout: React.FC = () => {
                         },
                         hidden: { opacity: 0, y: 72 },
                     }}>
+                    {/* <h1>About <br />Us</h1> */}
+                    <p>
                         Prodigy creatives is a branding and web design agency based in Barrie, Ontario. We create experiences that people love by aligning business goals with creativity.
-                    </motion.p>
+                    </p>
                     <h4>
                         Here is what we do
                     </h4>
@@ -99,7 +98,7 @@ const HomeAbout: React.FC = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </motion.div>
            </div>
         </div>
     )
@@ -133,7 +132,7 @@ const HomeWork: React.FC = () => {
                         <div className = 'home-work-card-txt'>
                         
                             <div>
-                                <Parallax className="custom-class" y={[20, -200]} tagOuter="figure">
+                                <Parallax className="custom-class" y={[-10, -200]} tagOuter="figure">
                                 <h3>
                                     {customer.title}
                                 </h3>

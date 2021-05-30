@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom'
 
 
@@ -12,13 +12,26 @@ import Work from './pages/Work';
 
 import '../src/styles/global.css'
 import Cursor from './components/Cursor';
+import Preloader from './components/Preloader';
+
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true) 
+  const preloader = isLoading ? <Preloader /> : <></>
+
+  // useEffect(() => {
+  //   setTimeout(()=> {
+  //     setIsLoading(!isLoading)
+  //   },1000)
+  // },[])
+
   return (
     <div className="App">
       <Router>
       <Cursor />
         <Navbar />
+        {/* {preloader} */}
         <Switch>
           <Route exact path = '/' component = {Home} />
           <Route path = '/work' component = {Work} />
